@@ -7,6 +7,7 @@ public class Vet extends Staff{
 
 
     public Vet(String staffFunction, String staffFirstName,String staffLastName, double staffSalary, String medicalSpeciality){
+        this.staffID = staffIDCounter();
         this.staffFunction = staffFunction;
         this.staffFirstName = staffFirstName;
         this.staffLastName = staffLastName;
@@ -14,23 +15,31 @@ public class Vet extends Staff{
         this.medicalSpeciality = medicalSpeciality;
     }
 
+
    //Criar lista de Animais para cada médico
     //achei essa parte no Stackoverflow mas nao sei se entendi direito
+   //Create and recover Patient list
+
     public void SetpatientList(){
         this.patientList = new ArrayList<Animals>();
     }
     public boolean addAnimal(Animals animalID){
     
-        if (animalID==null || patientList.contains(animalID)) {
+        if (patientList.contains(animalID)) {
             return false;
-        }
-        patientList.add(animalID);
-        return true;
+                }
+            else{ 
+                return patientList.add( animalID);
+              }
+        
+    
     }
     public void printPatientList(){
-        for (Animals d : patientList);
-        System.out.println(d.getAnimalID + d.getAnimalName +""+ d.getMedicalCond);
 
+        for (int i=0; i<= patientList.size(); i++){          ;
+        
+        System.out.println("Animal ID: " + patientList.get(i).getAnimalID() + ",  Animal Name: " + patientList.get(i).getAnimalName() + ", Animal Medical Cond.: " + patientList.get(i).getMedicalCond() + ".");
+        }
     };
 }
 

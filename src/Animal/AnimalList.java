@@ -1,7 +1,0 @@
-package Animal;
-
-public AnimalList() {
-    
-
-
-}

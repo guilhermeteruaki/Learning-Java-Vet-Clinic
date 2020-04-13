@@ -1,11 +1,17 @@
 package pers;
 
 public abstract class Staff {
-    public static long staffIDCounter = 000000;
-    public static long CreateStaffID(){
-        return (staffIDCounter++);
+   
+        private static long staffIDCounter = 000000;
+        public  long CreateStaffID(){
+            return (staffIDCounter++);
+            }
+        public long staffIDCounter(){
+            return staffIDCounter;
         }
-    long staffID = CreateStaffID();
+        
+    
+    long staffID;
     String staffFunction;
     String staffFirstName;
     String staffLastName;
@@ -13,7 +19,7 @@ public abstract class Staff {
 
 public long getStaffID(){
     return this.staffID;
-}
+ }
 public String getStaffName(){
     return (this.staffFirstName + " "+  this.staffLastName);
 }
