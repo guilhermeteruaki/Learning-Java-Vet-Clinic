@@ -29,7 +29,7 @@ public class Vet extends Staff{
             return false;
                 }
             else{ 
-                return patientList.add( animalID);
+                return patientList.add(animalID);
               }
         
     
