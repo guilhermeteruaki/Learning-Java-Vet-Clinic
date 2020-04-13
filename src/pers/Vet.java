@@ -1,12 +1,10 @@
 package pers;
 
-import java.util.ArrayList;
 
-import Animal.Animals;
 
 public class Vet extends Staff{
     String medicalSpeciality;
-   public ArrayList<Animals> patientList;
+
 
     public Vet(String staffFunction, String staffFirstName,String staffLastName, double staffSalary, String medicalSpeciality){
         this.staffFunction = staffFunction;
@@ -16,22 +14,5 @@ public class Vet extends Staff{
         this.medicalSpeciality = medicalSpeciality;
     }
 
-    //Criar lista de Animais para cada médico
-    //achei essa parte no Stackoverflow mas nao sei se entendi direito
-    public void SetpatientList(){
-        this.patientList = new ArrayList<Animals>();
+ 
     }
-    public boolean addAnimal(Animals animalID){
-    
-        if (animalID==null || patientList.contains(animalID)) {
-            return false;
-        }
-        patientList.add(animalID);
-        return true;
-    }
-    public void printPatientList(){
-        for (Animals d : patientList);
-        System.out.println(d.getAnimalID + d.getAnimalName +""+ d.getMedicalCond);
-
-    }
-}
