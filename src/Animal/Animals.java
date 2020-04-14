@@ -1,11 +1,9 @@
 package Animal;
 
-public abstract class Animals {
-    public static long animalIDCounter = 100000;
-    public static long CreateAnimalID(){
-        return (animalIDCounter++);
-        }
-    long animalID = CreateAnimalID();
+public abstract class Animals  {
+    
+       
+    long animalID;
     String animalName;
     String animalType;
     double animalAge;

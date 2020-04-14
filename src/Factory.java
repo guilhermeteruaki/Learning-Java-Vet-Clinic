@@ -1,14 +1,21 @@
 import pers.Vet;
+
+import java.util.HashMap;
+
 import pers.Staff;
 
 public class Factory{
-// call createStaffID in Staff.java so that the name of the new vet should be the StaffID generated
-    public void createNewVet(){
-        long vetID = CreateStaffID();
 
-       Vet vetID = new Vet(staffFunction, staffFirstName, staffLastName, staffSalary, medicalSpeciality);
+    HashMap< Long, Object> veterinarianList = new HashMap<Long,Object>();
+
+    int numVets = 10;
+    for (i=0; i<=numVets;i++){ 
+
+        public void createNewVet(){
+            // long vetID = Main.CreateStaffID(); 
+            Vet vet = new Vet(staffFunction, staffFirstName, staffLastName, staffSalary, medicalSpeciality);
+
+            veterinarianList.put(Main.CreateStaffID(), vet);
+        }
     }
-
-    
-
 }
