@@ -1,21 +1,29 @@
 import pers.Vet;
-
-import java.util.HashMap;
-
+import java.util.InputMismatchException;
+import java.util.Scanner;
 import pers.Staff;
 
 public class Factory{
 
-    HashMap< Long, Object> veterinarianList = new HashMap<Long,Object>();
+    
 
-    int numVets = 10;
-    for (i=0; i<=numVets;i++){ 
+  
 
-        public void createNewVet(){
-            // long vetID = Main.CreateStaffID(); 
-            Vet vet = new Vet(staffFunction, staffFirstName, staffLastName, staffSalary, medicalSpeciality);
+    public void createNewVet(){
 
-            veterinarianList.put(Main.CreateStaffID(), vet);
+        try {  
+            System.out.println("How many Vets ?\n");
+            Scanner sc = new Scanner(System.in);
+            int numVets = sc.nextInt();
+                            
+            for (int i = 0; i <= numVets; i++) {
+                Vet vet = new Vet(staffFunction, staffFirstName, staffLastName, staffSalary, medicalSpeciality);
+                Main.veterinarianList.put(Main.CreateStaffID(), vet);
+                vet.setStaffID(Main.staffIDCounter());
+            } 
+        }
+        catch (InputMismatchException e) {
+            System.out.println("That's not a valid Number.");
         }
     }
 }

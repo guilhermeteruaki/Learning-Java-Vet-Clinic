@@ -7,7 +7,6 @@ public class Vet extends Staff{
 
 
     public Vet(String staffFunction, String staffFirstName,String staffLastName, double staffSalary, String medicalSpeciality){
-        this.staffID = Main.staffIDCounter();
         this.staffFunction = staffFunction;
         this.staffFirstName = staffFirstName;
         this.staffLastName = staffLastName;

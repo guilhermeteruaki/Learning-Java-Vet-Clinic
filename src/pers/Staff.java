@@ -18,6 +18,8 @@ public String getStaffName(){
 public double getSalary(){
     return this.staffSalary;
 }
-
+public long setStaffID(long staffIDNumber){
+    this.staffID = staffIDNumber;
+}
 
 }
