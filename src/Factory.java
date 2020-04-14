@@ -12,21 +12,18 @@ import java.util.Scanner;
 
 public class Factory{
 
-    
-
-  
-
     public void createNewVet(){
-        //get list of first names to random generator
+         //get list of first names to random generator
         //Random names from https://github.com/dominictarr/random-name
         ArrayList<String> listOfFirstNames = new ArrayList<>();
         ArrayList<String> listOfMiddleNames = new ArrayList<>();
         ArrayList<String> listOfSpecialities = new ArrayList<>();
-            listOfSpecialities.add("Dog");
-            listOfSpecialities.add("Cat");
-            listOfSpecialities.add("Exotic");
+         listOfSpecialities.add("Dog Specialist");
+        listOfSpecialities.add("Cat Specialist");
+        listOfSpecialities.add("Exotic Animals Specialist");
+            
         try {
-            BufferedReader BR = new BufferedReader(new FileReader("../addContent/NamesList.txt"));
+            BufferedReader BR = new BufferedReader(new FileReader("C:/Users/guilh/Documents/learning Programing/Java/Vet/src/NamesList.txt"));
             String line = BR.readLine();
 
             while (line != null){
@@ -44,7 +41,7 @@ public class Factory{
 
         //Get list of middle names
         try {
-            BufferedReader BR = new BufferedReader(new FileReader("../addContent/MiddleNames.txt"));
+            BufferedReader BR = new BufferedReader(new FileReader("C:/Users/guilh/Documents/learning Programing/Java/Vet/src/MiddleNames.txt"));
             String line = BR.readLine();
             
         while (line != null){
@@ -67,7 +64,7 @@ public class Factory{
             Scanner sc = new Scanner(System.in);
             int numVets = sc.nextInt();
                             
-            for (int i = 0; i <= numVets; i++) {
+            for (int i = 0; i < numVets; i++) {
                 
                 Random random = new Random();
                 // get a random arguments for the new Vet

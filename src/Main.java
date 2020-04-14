@@ -1,6 +1,8 @@
+import java.security.KeyStore.Entry;
 import java.util.HashMap;
 import Animal.*;
 import pers.*;
+
 
 public class Main {
 
@@ -31,5 +33,12 @@ public class Main {
 
        public static void main(String[] args) {
 
+            Factory factory = new Factory();
+              factory.createNewVet();
+
+              veterinarianList.entrySet().forEach(entry->{System.out.println("Vet ID: " + entry.getKey()+ " Vet Name: " + entry.getValue());});
+                     
        }
+
+
 }
