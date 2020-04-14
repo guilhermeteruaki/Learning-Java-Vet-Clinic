@@ -4,7 +4,6 @@ public class Staff {
    
        
     long staffID;
-    String staffFunction;
     String staffFirstName;
     String staffLastName;
     double staffSalary;
@@ -19,7 +18,7 @@ public double getSalary(){
     return this.staffSalary;
 }
 public long setStaffID(long staffIDNumber){
-    this.staffID = staffIDNumber;
+    return this.staffID = staffIDNumber;
 }
 
 }
