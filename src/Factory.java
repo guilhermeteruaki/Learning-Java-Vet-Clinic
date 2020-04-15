@@ -102,9 +102,9 @@ public class Factory{
             listOfConditions.add("Shortness of Breath");
             listOfConditions.add("Vitamin Deficiency");
             listOfConditions.add("Flees");
-
+            
         try {
-            BufferedReader BR = new BufferedReader(new FileReader("C:/Users/guilh/Documents/learning Programing/Java/Vet/src/PetNames.txt"));
+            BufferedReader BR = new BufferedReader(new FileReader("C:/Users/guilh/Documents/GitHub/Learning-Java-Vet-Clinic/src/PetNames.txt"));
             String line = BR.readLine();
 
             while (line != null){
@@ -128,42 +128,39 @@ public class Factory{
             Random random = new Random();   
             // get a random arguments for the new Pet]
             //creates iqual number of cats, dogs and exotic animals  
-            int x = (numPets/3);
-            int y = 2*(numPets/3);
-           
-            System.out.println(listOfPetNames.size());
-            // for (int i = 0; i < x; i++) {               
-                               
-            //     Cats cat = new Cats(listOfPetNames.get(random.nextInt(listOfPetNames.size())),
-            //                           "Cat",
-            //                           random.nextInt(15), 
-            //                           listOfConditions.get(random.nextInt(listOfConditions.size())));
-
-            //     Main.AnimalList.put(Main.CreateAnimalID(), cat);
-            //     cat.setAnimalID(Main.animalIDCounter());
             
-            // } 
+            for (int i = 0; i < (numPets/3); i++) {               
+                               
+                Cats cat = new Cats(listOfPetNames.get(random.nextInt(listOfPetNames.size())),
+                                      "Cat",
+                                      random.nextInt(15), 
+                                      listOfConditions.get(random.nextInt(listOfConditions.size())));
 
-            // for (int i= x; i< y; i++){
+                Main.AnimalList.put(Main.CreateAnimalID(), cat);
+                cat.setAnimalID(Main.animalIDCounter());
+            
+            } 
 
-            //     Dogs dog = new Dogs(listOfPetNames.get(random.nextInt(listOfPetNames.size())),
-            //                         "Dog",
-            //                         random.nextInt(20),
-            //                         listOfConditions.get(random.nextInt(listOfConditions.size())));
-            //     Main.AnimalList.put(Main.CreateAnimalID(), dog);
-            //     dog.setAnimalID(Main.animalIDCounter());
-            // }
+            for (int i= (numPets/3); i< (2*(numPets/3)); i++){
 
-            // for (int i= y; i<numPets; i++){
+                Dogs dog = new Dogs(listOfPetNames.get(random.nextInt(listOfPetNames.size())),
+                                    "Dog",
+                                    random.nextInt(20),
+                                    listOfConditions.get(random.nextInt(listOfConditions.size())));
+                Main.AnimalList.put(Main.CreateAnimalID(), dog);
+                dog.setAnimalID(Main.animalIDCounter());
+            }
 
-            //     Exotic exotic = new Exotic(listOfPetNames.get(random.nextInt(listOfPetNames.size())),
-            //                                 "Exotic",
-            //                                 random.nextInt(10),
-            //                                 listOfConditions.get(random.nextInt(listOfConditions.size())),
-            //                                 listOfExoticTypes.get(random.nextInt(listOfExoticTypes.size())));
-            //     Main.AnimalList.put(Main.CreateAnimalID(), exotic);
-            //     exotic.setAnimalID(Main.animalIDCounter());
-           // }
+            for (int i= (2*(numPets/3)); i<numPets; i++){
+
+                Exotic exotic = new Exotic(listOfPetNames.get(random.nextInt(listOfPetNames.size())),
+                                            "Exotic",
+                                            random.nextInt(10),
+                                            listOfConditions.get(random.nextInt(listOfConditions.size())),
+                                            listOfExoticTypes.get(random.nextInt(listOfExoticTypes.size())));
+                Main.AnimalList.put(Main.CreateAnimalID(), exotic);
+                exotic.setAnimalID(Main.animalIDCounter());
+           }
            // sc.close();
         }
         catch (InputMismatchException e) {

@@ -78,8 +78,8 @@ public class Main {
                                           System.out.println("\n");
                                           AnimalList.entrySet().forEach(entry -> {
                                                  System.out.println("Animal ID: " + entry.getKey() 
-                                                                      +" Animal Name: " + ((Animals) entry.getValue()).getAnimalName() 
-                                                                      + "Animal type: " + ((Animals) entry.getValue()).getAnimalType());
+                                                                      +", Animal Name: " + ((Animals) entry.getValue()).getAnimalName() 
+                                                                      + ", Animal type: " + ((Animals) entry.getValue()).getAnimalType());
                                           });
                                           System.out.println("\n");
                                           break;
