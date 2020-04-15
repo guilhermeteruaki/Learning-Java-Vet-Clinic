@@ -1,9 +1,12 @@
 package pers;
 
+import java.util.ArrayList;
 
+import Animal.Animals;
 
 public class Vet extends Staff{
     String medicalSpeciality;
+    ArrayList<Animals> patientList;
 
 
     public Vet(String staffFirstName,String staffLastName, double staffSalary, String medicalSpeciality){
@@ -32,12 +35,12 @@ public class Vet extends Staff{
         
     
     }
-    public void printPatientList(){
+    public void getPatientList(){
 
         for (int i=0; i<= patientList.size(); i++){          ;
         
         System.out.println("Animal ID: " + patientList.get(i).getAnimalID() + ",  Animal Name: " + patientList.get(i).getAnimalName() + ", Animal Medical Cond.: " + patientList.get(i).getMedicalCond() + ".");
         }
-    };
+    }
 }
 

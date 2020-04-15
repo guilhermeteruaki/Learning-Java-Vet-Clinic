@@ -1,5 +1,5 @@
 import java.util.HashMap;
-import Animal.*;
+//import Animal.*;
 import pers.*;
 
 
