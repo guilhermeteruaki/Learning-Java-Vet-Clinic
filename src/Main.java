@@ -35,8 +35,10 @@ public class Main {
             Factory factory = new Factory();
               factory.createNewVet();
 
-              veterinarianList.entrySet().forEach(entry->{System.out.println("Vet ID: " + entry.getKey()+ " Vet Name: " + ((Vet) entry.getValue()).getStaffName());
-              });
+              veterinarianList.entrySet().forEach(entry->{
+                     System.out.println("Vet ID: " + entry.getKey()
+                     + " Vet Name: " + ((Vet) entry.getValue()).getStaffName());
+       });
                      
        }
 
