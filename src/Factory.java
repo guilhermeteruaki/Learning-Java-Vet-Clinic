@@ -26,7 +26,7 @@ public class Factory{
         listOfSpecialities.add("Exotic Animals Specialist");
             
         try {
-            BufferedReader BR = new BufferedReader(new FileReader("C:/Users/guilh/Documents/learning Programing/Java/Vet/src/NamesList.txt"));
+            BufferedReader BR = new BufferedReader(new FileReader("src/NamesList.txt"));
             String line = BR.readLine();
 
             while (line != null){
@@ -44,7 +44,7 @@ public class Factory{
 
         //Get list of middle names
         try {
-            BufferedReader BR = new BufferedReader(new FileReader("C:/Users/guilh/Documents/learning Programing/Java/Vet/src/MiddleNames.txt"));
+            BufferedReader BR = new BufferedReader(new FileReader("src/MiddleNames.txt"));
             String line = BR.readLine();
             
         while (line != null){
@@ -104,7 +104,7 @@ public class Factory{
             listOfConditions.add("Flees");
             
         try {
-            BufferedReader BR = new BufferedReader(new FileReader("C:/Users/guilh/Documents/GitHub/Learning-Java-Vet-Clinic/src/PetNames.txt"));
+            BufferedReader BR = new BufferedReader(new FileReader("src/PetNames.txt"));
             String line = BR.readLine();
 
             while (line != null){
