@@ -125,44 +125,46 @@ public class Factory{
             System.out.println("How many Pets ?");
             Scanner sc = new Scanner(System.in);
             int numPets = sc.nextInt();
-            Random random = new Random();                
-            for (int i = 0; i < (numPets/3); i++) {
-                
-                
-                // get a random arguments for the new Pet
-                Cats cat = new Cats(listOfPetNames.get(random.nextInt(listOfPetNames.size())),
-                                      "Cat",
-                                      random.nextInt(15), 
-                                      listOfConditions.get(random.nextInt(listOfConditions.size())));
+            Random random = new Random();   
+            // get a random arguments for the new Pet]
+            //creates iqual number of cats, dogs and exotic animals  
+            int x = (numPets/3);
+            int y = 2*(numPets/3);
+           
+            System.out.println(listOfPetNames.size());
+            // for (int i = 0; i < x; i++) {               
+                               
+            //     Cats cat = new Cats(listOfPetNames.get(random.nextInt(listOfPetNames.size())),
+            //                           "Cat",
+            //                           random.nextInt(15), 
+            //                           listOfConditions.get(random.nextInt(listOfConditions.size())));
 
-                // Vet vet = new Vet(listOfFirstNames.get(random.nextInt(listOfFirstNames.size())),
-                //                   listOfMiddleNames.get(random.nextInt(listOfMiddleNames.size())),
-                //                   random.nextDouble()*10, 
-                //                   listOfSpecialities.get(random.nextInt(listOfSpecialities.size())));
+            //     Main.AnimalList.put(Main.CreateAnimalID(), cat);
+            //     cat.setAnimalID(Main.animalIDCounter());
+            
+            // } 
 
-                // Main.veterinarianList.put(Main.CreateStaffID(), vet);
-                // vet.setStaffID(Main.staffIDCounter());
-                // sc.close();
-                
-            } 
+            // for (int i= x; i< y; i++){
 
-            for (int i=(numPets/3); i< (2*numPets/3); i++){
+            //     Dogs dog = new Dogs(listOfPetNames.get(random.nextInt(listOfPetNames.size())),
+            //                         "Dog",
+            //                         random.nextInt(20),
+            //                         listOfConditions.get(random.nextInt(listOfConditions.size())));
+            //     Main.AnimalList.put(Main.CreateAnimalID(), dog);
+            //     dog.setAnimalID(Main.animalIDCounter());
+            // }
 
-                Dogs dog = new Dogs(listOfPetNames.get(random.nextInt(listOfPetNames.size())),
-                                    "Dog",
-                                    random.nextInt(20),
-                                    listOfConditions.get(random.nextInt(listOfConditions.size())));
-            }
+            // for (int i= y; i<numPets; i++){
 
-            for (int i=(2*numPets/3); i<numPets; i++){
-
-                Exotic exotic = new Exotic(listOfPetNames.get(random.nextInt(listOfPetNames.size())),
-                                            "Exotic",
-                                            random.nextInt(10),
-                                            listOfConditions.get(random.nextInt(listOfConditions.size())),
-                                            listOfExoticTypes.get(random.nextInt(listOfExoticTypes.size())));
-            }
-            sc.close();
+            //     Exotic exotic = new Exotic(listOfPetNames.get(random.nextInt(listOfPetNames.size())),
+            //                                 "Exotic",
+            //                                 random.nextInt(10),
+            //                                 listOfConditions.get(random.nextInt(listOfConditions.size())),
+            //                                 listOfExoticTypes.get(random.nextInt(listOfExoticTypes.size())));
+            //     Main.AnimalList.put(Main.CreateAnimalID(), exotic);
+            //     exotic.setAnimalID(Main.animalIDCounter());
+           // }
+           // sc.close();
         }
         catch (InputMismatchException e) {
             System.out.println("That's not a valid Number.");

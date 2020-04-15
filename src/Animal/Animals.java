@@ -9,7 +9,9 @@ public abstract class Animals  {
     double animalAge;
     String medicalCond;   
 
-        
+    public long setAnimalID(long idNumber){
+       return this.animalID = idNumber;
+    }
     public long getAnimalID(){
         return this.animalID;           
     }
