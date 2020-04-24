@@ -38,7 +38,7 @@ public class Main {
       
 
 
-       //public static SearchAndPrint SnP = new SearchAndPrint();
+     
        public static void main(String[] args) {
               
               boolean exitProgram = false;
@@ -78,8 +78,8 @@ public class Main {
                                           System.out.println("\n");
                                           veterinarianList.entrySet().forEach(entry -> {
                                                  System.out.println("Vet ID: " + entry.getKey() +
-                                                 " Vet Name: " + ((Vet) entry.getValue()).getStaffName()
-                                                 + "Vet speciality: " + ((Vet) entry.getValue()).getMedicalSpeciality());
+                                                 ", Vet Name: " + ((Vet) entry.getValue()).getStaffName()
+                                                 + ", Vet speciality: " + ((Vet) entry.getValue()).getMedicalSpeciality());
                                           });
                                           System.out.println("\n");
                                           break;
@@ -121,9 +121,13 @@ public class Main {
                                                        .forEach(entry ->
                                                   System.out.println(((Animals) AnimalList.get(entry)).getAnimalName() ));
                                           break;
-                                   
+                                   //Search vet by name 
                                    case 8:
+                                          {
+                                                 SearchAndPrint sNP = new SearchAndPrint();
 
+                                                 sNP.searchVetByName();
+                                          }
                                           break;
                                           
                                    case 9:

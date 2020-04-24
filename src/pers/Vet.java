@@ -1,13 +1,12 @@
 package pers;
 
-import java.util.ArrayList;
-import java.util.List;
 
-import Animal.Animals;
+import java.util.LinkedList;
+
 
 public class Vet extends Staff{
     String medicalSpeciality;
-    ArrayList<Long> patientList;
+    LinkedList<Long> patientList;
 
 
     public Vet(String staffFirstName,String staffLastName, double staffSalary, String medicalSpeciality){
@@ -18,12 +17,11 @@ public class Vet extends Staff{
     }
 
 
-   //Criar lista de Animais para cada médico
-    //achei essa parte no Stackoverflow mas nao sei se entendi direito
+   
    //Create and recover Patient list
 
     public void setpatientList(){
-        this.patientList = new ArrayList<Long>();
+        this.patientList = new LinkedList<Long>();
     }
     public boolean addAnimal(Long animalID){
     
@@ -38,19 +36,20 @@ public class Vet extends Staff{
     public String getMedicalSpeciality(){
         return medicalSpeciality;
     }
-        
     
-    public ArrayList<Long> getPatientList(){
+    
+    public LinkedList<Long> getPatientList(){
         return patientList;
     }
 
+    public void treatPatient(){
+        System.out.println("treating " + patientList.getFirst());
+        patientList.poll();
 
-    // public void printPatientList(){
+        System.out.println("The animal has been treated");
+    }
 
-    //     for (int i=0; i<= patientList.size(); i++){          ;
-        
-    //     System.out.println("Animal ID: " + patientList.get(i).getAnimalID() + ",  Animal Name: " + patientList.get(i).getAnimalName() + ", Animal Medical Cond.: " + patientList.get(i).getMedicalCond() + ".");
-    //     }
-    // }
+
+    
 }
 

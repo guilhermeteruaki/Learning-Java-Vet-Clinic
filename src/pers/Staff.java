@@ -14,6 +14,13 @@ public long getStaffID(){
 public String getStaffName(){
     return (this.staffFirstName + " "+  this.staffLastName);
 }
+
+public String getStaffFirstName(){
+    return this.staffFirstName;
+}
+public String getStaffLastName(){
+    return this.staffLastName;
+}
 public double getSalary(){
     return this.staffSalary;
 }

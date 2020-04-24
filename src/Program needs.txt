@@ -1,8 +1,9 @@
 Create Staff, Vets and Animals DONE
 - List all staff DONE
+- Patient list DONE (TBD Check poll from queue)
+- Give staff jobs DONE
 
 
-- Give staff jobs
 - List staff by categories (e.g. list all Nurses) 
 - List all Admin staff performing a certain task
 - Search for a specific member of staff by name
