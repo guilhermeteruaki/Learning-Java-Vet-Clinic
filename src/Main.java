@@ -1,9 +1,5 @@
-import java.security.KeyStore.Entry;
-import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.InputMismatchException;
-import java.util.List;
 import java.util.Scanner;
 
 import Animal.*;
@@ -52,10 +48,11 @@ public class Main {
                             System.out.println("\nPlease choose from:\n" 
                                                  + "1 - Generate New Veterinarian.\n"
                                                  + "2 - Generate New Animal.\n" 
-                                                 + "3 - List All Vets.\n" 
+                                                 + "3 - Create new Staff\n" 
                                                  + "4 - List Animals\n"
-                                                 + "5 - Create new Staff\n"
+                                                 + "5 - List All Vets.\n"
                                                  + "6 - List All Staff\n"
+                                                 + "7 - Print patient list for specific veterinarian\n"
                                                  + "999 - To exit the program.");
                             int menuChoice = sc.nextInt();
                             
@@ -75,8 +72,9 @@ public class Main {
 
                                           
                                           break;
-                                   //list all doctors       
-                                   case 3:
+                                      
+                                    //list all vets  
+                                   case 5:
                                           System.out.println("\n");
                                           veterinarianList.entrySet().forEach(entry -> {
                                                  System.out.println("Vet ID: " + entry.getKey() +
@@ -95,13 +93,15 @@ public class Main {
                                           });
                                           System.out.println("\n");
                                           break;
-                                   //create Admin
-                                   case 5:
+                                  
+                                  // Create new admin
+                                   case 3:
                                           System.out.println("\n");
                                           factory.createNewAdmin();
                                           System.out.println("\n");
                                           break;
-                                          
+                                   
+                                          //List all Staffs
                                    case 6:
                                           System.out.println("\n");
                                           AdminList.entrySet().forEach(entry -> {
@@ -113,6 +113,7 @@ public class Main {
                                           System.out.println("\n");
                                           break;
                                    
+                                   // Print patient List
                                    case 7:
                                    System.out.println("For which Vet?");
                                           long vetChoice = sc.nextLong();
@@ -120,6 +121,18 @@ public class Main {
                                                        .forEach(entry ->
                                                   System.out.println(((Animals) AnimalList.get(entry)).getAnimalName() ));
                                           break;
+                                   
+                                   case 8:
+
+                                          break;
+                                          
+                                   case 9:
+
+                                          break;
+
+                                   case 10:
+
+                                          break;       
 
                                    case 999:
                                           exitProgram = true;
