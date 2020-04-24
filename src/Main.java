@@ -1,5 +1,9 @@
+import java.security.KeyStore.Entry;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 import Animal.*;
@@ -32,10 +36,15 @@ public class Main {
        // Generates Staffs and animals Lists
        public static HashMap<Long, Object> veterinarianList = new HashMap<Long, Object>();
        public static HashMap<Long, Object> AnimalList = new HashMap<Long, Object>();
+       public static HashMap<Long, Object> AdminList = new HashMap<Long,Object>();
        
        public static Factory factory = new Factory();
+      
+
+
        //public static SearchAndPrint SnP = new SearchAndPrint();
        public static void main(String[] args) {
+              
               boolean exitProgram = false;
               do {
                      try{
@@ -45,6 +54,8 @@ public class Main {
                                                  + "2 - Generate New Animal.\n" 
                                                  + "3 - List All Vets.\n" 
                                                  + "4 - List Animals\n"
+                                                 + "5 - Create new Staff\n"
+                                                 + "6 - List All Staff\n"
                                                  + "999 - To exit the program.");
                             int menuChoice = sc.nextInt();
                             
@@ -69,7 +80,8 @@ public class Main {
                                           System.out.println("\n");
                                           veterinarianList.entrySet().forEach(entry -> {
                                                  System.out.println("Vet ID: " + entry.getKey() +
-                                                 " Vet Name: " + ((Vet) entry.getValue()).getStaffName());
+                                                 " Vet Name: " + ((Vet) entry.getValue()).getStaffName()
+                                                 + "Vet speciality: " + ((Vet) entry.getValue()).getMedicalSpeciality());
                                           });
                                           System.out.println("\n");
                                           break;
@@ -82,6 +94,31 @@ public class Main {
                                                                       + ", Animal type: " + ((Animals) entry.getValue()).getAnimalType());
                                           });
                                           System.out.println("\n");
+                                          break;
+                                   //create Admin
+                                   case 5:
+                                          System.out.println("\n");
+                                          factory.createNewAdmin();
+                                          System.out.println("\n");
+                                          break;
+                                          
+                                   case 6:
+                                          System.out.println("\n");
+                                          AdminList.entrySet().forEach(entry -> {
+                                                 System.out.println("Staff ID: " + entry.getKey() 
+                                                                      +", Staff Name: " + ((Admin) entry.getValue()).getStaffName() 
+                                                                      + ", Staff Sector: " + ((Admin) entry.getValue()).getAdminSector()
+                                                                      + ", The Staff is currently "+ ((Admin) entry.getValue()).getAdminJob());
+                                          });
+                                          System.out.println("\n");
+                                          break;
+                                   
+                                   case 7:
+                                   System.out.println("For which Vet?");
+                                          long vetChoice = sc.nextLong();
+                                         ((Vet) (veterinarianList.get(vetChoice))).getPatientList()
+                                                       .forEach(entry ->
+                                                  System.out.println(((Animals) AnimalList.get(entry)).getAnimalName() ));
                                           break;
 
                                    case 999:

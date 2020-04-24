@@ -1,12 +1,13 @@
 package pers;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import Animal.Animals;
 
 public class Vet extends Staff{
     String medicalSpeciality;
-    ArrayList<Animals> patientList;
+    ArrayList<Long> patientList;
 
 
     public Vet(String staffFirstName,String staffLastName, double staffSalary, String medicalSpeciality){
@@ -21,10 +22,10 @@ public class Vet extends Staff{
     //achei essa parte no Stackoverflow mas nao sei se entendi direito
    //Create and recover Patient list
 
-    public void SetpatientList(){
-        this.patientList = new ArrayList<Animals>();
+    public void setpatientList(){
+        this.patientList = new ArrayList<Long>();
     }
-    public boolean addAnimal(Animals animalID){
+    public boolean addAnimal(Long animalID){
     
         if (patientList.contains(animalID)) {
             return false;
@@ -32,15 +33,24 @@ public class Vet extends Staff{
             else{ 
                 return patientList.add(animalID);
               }
+        }      
+
+    public String getMedicalSpeciality(){
+        return medicalSpeciality;
+    }
         
     
+    public ArrayList<Long> getPatientList(){
+        return patientList;
     }
-    public void getPatientList(){
 
-        for (int i=0; i<= patientList.size(); i++){          ;
+
+    // public void printPatientList(){
+
+    //     for (int i=0; i<= patientList.size(); i++){          ;
         
-        System.out.println("Animal ID: " + patientList.get(i).getAnimalID() + ",  Animal Name: " + patientList.get(i).getAnimalName() + ", Animal Medical Cond.: " + patientList.get(i).getMedicalCond() + ".");
-        }
-    }
+    //     System.out.println("Animal ID: " + patientList.get(i).getAnimalID() + ",  Animal Name: " + patientList.get(i).getAnimalName() + ", Animal Medical Cond.: " + patientList.get(i).getMedicalCond() + ".");
+    //     }
+    // }
 }
 
