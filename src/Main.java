@@ -44,7 +44,7 @@ public class Main {
               boolean exitProgram = false;
               do {
                      try{
-                            Scanner sc = new Scanner(System.in);
+                            Scanner sc1 = new Scanner(System.in);
                             System.out.println("\nPlease choose from:\n" 
                                                  + "1 - Generate New Veterinarian.\n"
                                                  + "2 - Generate New Animal.\n" 
@@ -56,7 +56,7 @@ public class Main {
                                                  + "8 - Search by veterinarian name.\n"
                                                  + "9 - Search by Staff name\n"
                                                  + "999 - To exit the program.");
-                            int menuChoice = sc.nextInt();
+                            int menuChoice = sc1.nextInt();
                             
 
                             switch (menuChoice) {
@@ -118,7 +118,7 @@ public class Main {
                                    // Print patient List
                                    case 7:
                                    System.out.println("For which Vet?");
-                                          long vetChoice = sc.nextLong();
+                                          long vetChoice = sc1.nextLong();
                                          ((Vet) (veterinarianList.get(vetChoice))).getPatientList()
                                                        .forEach(entry ->
                                                   System.out.println(((Animals) AnimalList.get(entry)).getAnimalName() ));
@@ -140,8 +140,11 @@ public class Main {
 
                                           break;
 
-                                   case 10:
+                                   case 10:{
+                                          SearchAndPrint sNP = new SearchAndPrint();
 
+                                          sNP.searchAnimalByName();
+                                   }
                                           break;       
 
                                    case 999:
