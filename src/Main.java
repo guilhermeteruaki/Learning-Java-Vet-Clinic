@@ -124,7 +124,7 @@ public class Main {
                                    
                                    // Print patient List
                                    case 7:
-                                   System.out.println("For which Vet?");
+                                   System.out.println("For which Vet?\n Use Vet ID.");
                                           long vetChoice = sc1.nextLong();
                                          AtomicInteger number = new AtomicInteger(1);
                                           
@@ -215,7 +215,7 @@ public class Main {
                
               }
               while (exitProgram == false);
-              
+              System.out.println("See you next time!"); 
        }
 
 

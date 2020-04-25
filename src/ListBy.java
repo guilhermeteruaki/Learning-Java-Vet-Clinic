@@ -19,7 +19,7 @@ public void listVetBySpeciality(){
     });
 }
 public void listStaffByJob(){
-    System.out.println("What job?\n Doing Payslip, Attending Client, Sweeping Floor or holding animal?");
+    System.out.println("What job?\n Doing Payslip, Attending Client, Sweeping Floor or holding animal?\n Use one word.");
     Scanner sc = new Scanner(System.in);
     String imput= sc.nextLine();
 
@@ -29,7 +29,7 @@ public void listStaffByJob(){
                               +", Staff Name:" + ((Admin) entry.getValue()).getStaffName());
 
         }
-
+  
     });
 }
 
