@@ -240,7 +240,7 @@ public class Factory{
                 
                 //Look at listOfCatVets and get the list with the smallest size
                 int count = 0;
-                int minSize =10;
+                int minSize =10000;
                 LinkedList<Long> minSizedList = new LinkedList<Long>();
     
                 while (listOfCatVets.size() > count) {
@@ -263,8 +263,41 @@ public class Factory{
                                     "Dog",
                                     random.nextInt(20),
                                     listOfConditions.get(random.nextInt(listOfConditions.size())));
+
                 Main.AnimalList.put(Main.CreateAnimalID(), dog);
                 dog.setAnimalID(Main.animalIDCounter());
+
+                //foreach https://stackoverflow.com/questions/4234985/how-to-for-each-the-hashmap
+             LinkedList<LinkedList<Long>> listOfDogVets = new LinkedList<LinkedList<Long>>();
+                
+             //for each Vet in the vet list
+             Main.veterinarianList.entrySet().forEach(entry -> {
+                 
+                 //get the dog specialist and put his patient list the listOfdogVets
+                 if( ((Vet) entry.getValue()).getMedicalSpeciality() == "Dog Specialist"){
+                     listOfDogVets.add((LinkedList<Long>) ((Vet) entry.getValue()).getPatientList());
+                 }
+             });
+             
+             //Look at listOfDogVets and get the list with the smallest size
+             int count = 0;
+             int minSize =10000;
+             LinkedList<Long> minSizedList = new LinkedList<Long>();
+ 
+             while (listOfDogVets.size() > count) {
+                 
+                 if( listOfDogVets.get(count).size() <= minSize){
+                     minSize = listOfDogVets.get(count).size();
+                     minSizedList = listOfDogVets.get(count);
+                     
+                 }
+             count++;
+             }  
+                //add the animal ID to the list
+
+             minSizedList.add(Main.animalIDCounter());
+
+
             }
 
             for (int i= (2*(numPets/3)); i<numPets; i++){
@@ -274,8 +307,40 @@ public class Factory{
                                             random.nextInt(10),
                                             listOfConditions.get(random.nextInt(listOfConditions.size())),
                                             listOfExoticTypes.get(random.nextInt(listOfExoticTypes.size())));
+
                 Main.AnimalList.put(Main.CreateAnimalID(), exotic);
                 exotic.setAnimalID(Main.animalIDCounter());
+
+                //foreach https://stackoverflow.com/questions/4234985/how-to-for-each-the-hashmap
+             LinkedList<LinkedList<Long>> listOfExoticVets = new LinkedList<LinkedList<Long>>();
+                
+             //for each Vet in the vet list
+             Main.veterinarianList.entrySet().forEach(entry -> {
+                 
+                 //get the Exotic specialist and put his patient list the listOfExoticVets
+                 if( ((Vet) entry.getValue()).getMedicalSpeciality() == "Exotic Animals Specialist"){
+                     listOfExoticVets.add((LinkedList<Long>) ((Vet) entry.getValue()).getPatientList());
+                 }
+             });
+             
+             //Look at listOfExoticVets and get the list with the smallest size
+             int count = 0;
+             int minSize =10;
+             LinkedList<Long> minSizedList = new LinkedList<Long>();
+ 
+             while (listOfExoticVets.size() > count) {
+                 
+                 if( listOfExoticVets.get(count).size() <= minSize){
+                     minSize = listOfExoticVets.get(count).size();
+                     minSizedList = listOfExoticVets.get(count);
+                     
+                 }
+             count++;
+             }  
+             //add the animal ID to the list
+
+             minSizedList.add(Main.animalIDCounter());
+
            }
            // sc.close();
         }

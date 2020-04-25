@@ -2,6 +2,7 @@ package pers;
 
 
 import java.util.LinkedList;
+import Animal.*;
 
 
 public class Vet extends Staff{
@@ -23,6 +24,7 @@ public class Vet extends Staff{
     public void setpatientList(){
         this.patientList = new LinkedList<Long>();
     }
+
     public boolean addAnimal(Long animalID){
     
         if (patientList.contains(animalID)) {
@@ -31,22 +33,20 @@ public class Vet extends Staff{
             else{ 
                 return patientList.add(animalID);
               }
-        }      
+    }      
 
     public String getMedicalSpeciality(){
         return medicalSpeciality;
     }
     
-    
     public LinkedList<Long> getPatientList(){
         return patientList;
     }
-
-    public void treatPatient(){
-        System.out.println("treating " + patientList.getFirst());
+    
+    public long treatPatient(){
+        long x = patientList.getFirst();
         patientList.poll();
-
-        System.out.println("The animal has been treated");
+        return x;
     }
 
 
