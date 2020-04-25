@@ -19,7 +19,7 @@ public void listVetBySpeciality(){
     });
 }
 public void listStaffByJob(){
-    System.out.println("What job?\n Payslip, Client, Sweeping or holding animal?");
+    System.out.println("What job?\n Doing Payslip, Attending Client, Sweeping Floor or holding animal?");
     Scanner sc = new Scanner(System.in);
     String imput= sc.nextLine();
 
