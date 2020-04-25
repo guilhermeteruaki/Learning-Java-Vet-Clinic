@@ -1,13 +1,16 @@
 Create Staff, Vets and Animals DONE
 - List all staff DONE
-- Patient list DONE (TBD Check poll from queue)
+- Patient list DONE (TBD Check poll from queue) NEED list for dogs and exotic
 - Give staff jobs DONE
+- Search for a specific member of staff by name DONE
+- List all animals DONE
+
+
+
 
 
 - List staff by categories (e.g. list all Nurses) 
 - List all Admin staff performing a certain task
-- Search for a specific member of staff by name
-- List all animals
 - List animals by various types (e.g. list all dogs)
 - Search for a specific animal by name
 - List all the animals assigned to a member of medical staff

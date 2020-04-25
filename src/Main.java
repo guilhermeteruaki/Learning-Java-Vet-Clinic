@@ -48,11 +48,13 @@ public class Main {
                             System.out.println("\nPlease choose from:\n" 
                                                  + "1 - Generate New Veterinarian.\n"
                                                  + "2 - Generate New Animal.\n" 
-                                                 + "3 - Create new Staff\n" 
-                                                 + "4 - List Animals\n"
+                                                 + "3 - Create new Staff.\n" 
+                                                 + "4 - List Animals.\n"
                                                  + "5 - List All Vets.\n"
-                                                 + "6 - List All Staff\n"
-                                                 + "7 - Print patient list for specific veterinarian\n"
+                                                 + "6 - List All Staff.\n"
+                                                 + "7 - Print patient list for specific veterinarian.\n"
+                                                 + "8 - Search by veterinarian name.\n"
+                                                 + "9 - Search by Staff name\n"
                                                  + "999 - To exit the program.");
                             int menuChoice = sc.nextInt();
                             
@@ -130,7 +132,11 @@ public class Main {
                                           }
                                           break;
                                           
-                                   case 9:
+                                   case 9:{
+                                          SearchAndPrint sNP = new SearchAndPrint();
+
+                                          sNP.searchAdminByName();
+                                   }
 
                                           break;
 

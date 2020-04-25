@@ -1,23 +1,15 @@
-import pers.Admin;
-import pers.Vet;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.InputMismatchException;
 import java.util.LinkedList;
-import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
 
-import Animal.Cats;
-import Animal.Dogs;
-import Animal.Exotic;
-
+import Animal.*;
+import pers.*;
 
 public class Factory{
 
@@ -155,7 +147,7 @@ public class Factory{
                // get a random arguments for the new Vet
                Admin admin = new Admin(listOfFirstNames.get(random.nextInt(listOfFirstNames.size())),
                                  listOfMiddleNames.get(random.nextInt(listOfMiddleNames.size())),
-                                 random.nextDouble()*5, 
+                                 random.nextDouble()*500, 
                                  listOfAdminSector.get(random.nextInt(listOfAdminSector.size())));
 
                Main.AdminList.put(Main.CreateStaffID(), admin);
